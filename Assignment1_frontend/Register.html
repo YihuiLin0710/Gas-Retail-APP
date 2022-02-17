@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register here</title>
+  
+</head>
+<body>
+  <center>
+  <div class="center">
+    <h1>Register Here</h1>
+  <form>
+    <table>
+      <tr>
+        <td>
+          Username:
+        </td>
+        <td>
+         <input pattern=".{8,16}" type="text" name="username" placeholder="8 to 16 charaters" required>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Password:
+        </td>
+        <td>
+         <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" name="user_pass" placeholder="********" required>
+        </td>
+      </tr>
+
+      <tr>
+          <td>
+            <input type="submit" name="submit" value="Submit">
+          </td>
+
+      <td>
+      Already a member?<a href="index.html">
+        Back to login
+      </a>
+    </td>
+  </table>
+  <br><br>
+
+  <label>* Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</label>
+  </form>
+</div>
+</center>
+</body>
+</html>
+
+<style>
+  .center {
+      margin: 0;
+      position: absolute;
+      top: 40%;
+      left:50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+</style>
