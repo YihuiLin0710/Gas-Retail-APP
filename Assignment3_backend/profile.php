@@ -2,13 +2,89 @@
     session_start();
 
 
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $address2 = $_POST['address2'];
-    $city = $_POST['city'];
-    $country = $_POST['country/region'];
-    $state = $_POST['state/province'];
-    $zipcode = $_POST['zipcode'];
+    class Profile
+    {
+        public function setValues(){
+    
+            if(isset($_POST['name'])) {
+            $name = $_POST['name'];
+        }
+        else {
+            return false;
+        }
+            if(isset($_POST['address'])) {
+            $address = $_POST['address'];
+        }
+        else {
+            return false;
+        }
+            if(isset($_POST['address2'])) {
+                $address2 = $_POST['address2'];
+            }
+        else {
+            return false;
+        }
+            if(isset($_POST['city'])) {
+                    $city = $_POST['city'];
+            }
+        else {
+            return false;
+        }
+            if(isset($_POST['country/region'])) {
+                    $country = $_POST['country/region'];
+            }
+        else {
+            return false;
+        }
+            if(isset($_POST['state/province'])) {
+                    $state = $_POST['state/province'];
+            }
+        else {
+            return false;
+        }
+            if(isset($_POST['zipcode'])) {
+                $zipcode = $_POST['zipcode'];
+            }
+        else {
+            return false;
+        }
+    
+        return true;
+    
+        }
+    }
+   
+
+
+    if(isset($_POST['name'])) {
+		$name = $_POST['name'];
+	}
+    if(isset($_POST['address'])) {
+		$address = $_POST['address'];
+	}
+    if(isset($_POST['address2'])) {
+        $address2 = $_POST['address2'];
+    }
+    if(isset($_POST['city'])) {
+        $city = $_POST['city'];
+    }
+    if(isset($_POST['country/region'])) {
+        $country = $_POST['country/region'];
+    }
+    if(isset($_POST['state/province'])) {
+        $state = $_POST['state/province'];
+    }
+    if(isset($_POST['zipcode'])) {
+        $zipcode = $_POST['zipcode'];
+    }
+
+    //$name = $_POST['name'];
+    //$address = $_POST['address'];
+    //$address2 = $_POST['address2'];
+    //$city = $_POST['city'];
+    //$country = $_POST['country/region'];
+    //$state = $_POST['state/province'];
+    //$zipcode = $_POST['zipcode'];
     
     
     $username = $_SESSION['username'];
