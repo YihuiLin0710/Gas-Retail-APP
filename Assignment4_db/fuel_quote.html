@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <a href="main.php">Back to main page</a>
+    <center>
+    <div class="center">
+        <form action="fuel_quote.php" method="post">
+            <div>
+                <h1>Fuel Quote</h1>
+            </div>
+
+            <div class="container">
+                <input type="gallons" id="gallons" name="gallons" placeholder="Gallons requested" required>
+                <br><br>
+            </div>
+
+            <div class="container">
+                <input type="address" id="address" name="address" placeholder="address(database not built)" required>
+                <br><br>
+            </div>
+
+            <div class="container">
+                <input type="date" id="date" name="date" required>
+                <br><br>
+            </div>
+
+            <div class="container">
+                <input type="pricing_module" id="pricing_module" name="pricing_module" placeholder="$(pricing module not built)" required>
+                <br><br>
+            </div>
+
+            <div class="container">
+                <input type="total" id="total" name="total" placeholder="total $(pricing module not built)" required>
+                <br><br>
+            </div>
+
+            <button type="reset">Reset</button>
+            <input type="submit" value="Submit" name="">
+
+        </form>
+    </div>
+    </center>
+</body>
+
+<style>
+.center {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+</style>
