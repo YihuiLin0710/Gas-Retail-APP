@@ -60,8 +60,13 @@
                     echo "<script>alert('Delivery date set before today!');</script>";
                     echo "<script>history.back();</script>";
                 }
+                else if($_GET["error"] == "dateaddrset") {
+                    echo "<script>alert('That address already has a request on that date!');</script>";
+                    echo "<script>history.back();</script>";
+                }
                 else if($_GET["error"] == "none") {
-                    echo "<script>alert('Fuel quote form was successfully added!');</script>";
+                    header("location: main.php?error=fueladded");
+                    exit();
                 }
                 
             }

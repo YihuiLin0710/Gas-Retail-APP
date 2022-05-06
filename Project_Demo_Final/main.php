@@ -32,6 +32,9 @@
             if($_GET["error"] == "login") {
                 echo '<script>alert("Login Successful!")</script>';
             }
+            else if ($_GET["error"] == "fueladded") {
+                echo "<script>alert('Fuel quote form was successfully added!');</script>";
+            }
         }
     ?>
 <?php

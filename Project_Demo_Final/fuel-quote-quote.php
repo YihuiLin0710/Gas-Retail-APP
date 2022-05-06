@@ -34,6 +34,10 @@
                     header("location: fuel-quote.php?error=passeddate");
                     exit();
                 }
+                if (dateAddrSet($conn, $id, $Addr, $Deliver) !== false) {
+                    header("location: fuel-quote.php?error=dateaddrset");
+                    exit();
+                }
                 $idExists = idExists($conn, $id);
                 $currentPrice = 1.50;
                 $LocFact = "";
@@ -46,7 +50,7 @@
                 else {
                     $LocFact = 0.04;
                 }
-                if (hasHistory($conn, $id)) {
+                if (hasHistory($conn, $id) !== false) {
                     $rateHistFact = 0.01;
                 } 
                 else {
