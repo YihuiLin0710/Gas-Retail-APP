@@ -12,16 +12,28 @@ if (isset($_POST["submit"])) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
+    if (strlen($User) < 8) {
+        header("location: ../signup.php?error=usershort");
+        exit();
+    }
     if (strlen($User) > 50) {
-        header("location: ../signup.php?error=userlength");
+        header("location: ../signup.php?error=userlong");
         exit();
     }
     if ($Pass !== $Confirm) {
         header("location: ../signup.php?error=matchpwd");
         exit();
     }
+    if (passwordCheck($Pass)) {
+        header("location: ../signup.php?error=passcheck");
+        exit();
+    }
+    if (strlen($Pass) < 8) {
+        header("location: ../signup.php?error=passshort");
+        exit();
+    }
     if (strlen($Pass) > 50) {
-        header("location: ../signup.php?error=passlength");
+        header("location: ../signup.php?error=passlong");
         exit();
     }
     if (userExists($conn, $User) !== false) {
