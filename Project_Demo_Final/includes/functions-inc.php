@@ -31,6 +31,7 @@
         }
         return $result;
     }
+    
     function userExists($conn, $User) {
         $sql = "SELECT * FROM client_info WHERE username = ?;";
         $stmt = mysqli_stmt_init($conn);
@@ -318,6 +319,27 @@
         }
         else {
             $result = false;
+        }
+        return $result;
+    }
+    function dateAddrSet($conn, $id, $Addr, $Date) {
+        $sql = "SELECT * FROM fuel_quote
+        WHERE id = '$id' AND addr = '$Addr' AND deliver = '$Date';";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    function passwordCheck($Pass) {
+        $result= "";
+        if(preg_match('/[A-Z]/', $Pass) && preg_match('/\d/', $Pass) && preg_match('/[!@#$%^&*]/', $Pass) && preg_match('/[a-z]/', $Pass)) {
+            $result = false;
+        }
+        else {
+            $result = true;
         }
         return $result;
     }
